@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.tsc.py.filesearch</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -420,6 +420,6 @@ shift/⌘+Y : 预览文件</string>
 	<key>version</key>
 	<string>1.0</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/aitsc/alfred.filesearch</string>
 </dict>
 </plist>
