@@ -133,7 +133,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python 'search file.py' '0:7tTzXHqr' '~/Nutstore Files/学习/论文/EndNote/papers.Data/PDF' 'pdf' ''
+				<string>python 'search file.pyc' '0:7tTzXHqr' '~/Nutstore Files/学习/论文/EndNote/papers.Data/PDF' 'pdf' ''
 
 # 参数的例子 '缓存保留秒数:本脚本标识符' '检索路径1:检索路径2' '检索后缀名1:检索后缀名2' '排除文件夹1:排除文件夹2'
 
@@ -216,7 +216,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python 'fd.py' '~/Nutstore Files:~/Downloads:~/code' {query}
+				<string>python 'fd.pyc' '~/Nutstore Files:~/Downloads:~/code' {query}
 
 # 修改倒数第二个参数的例子 '检索路径1:检索路径2'
 
@@ -297,7 +297,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python 'search text.py' '~/Nutstore Files:~/code' {query}
+				<string>python 'search text.pyc' '~/Nutstore Files:~/code' {query}
 
 
 # 修改倒数第二个参数的例子 '检索路径1:检索路径2'
