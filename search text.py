@@ -135,7 +135,7 @@ file_types = '''--actionscript: .as .mxml
 
 
 def ag(paras, max_count=100, arg='ts', path_L=('.',), depth=100, lr_charNum=15, show_count=20, show_results=200,
-       f_types=''):
+       f_types='', f_ignore=""):
     """
     :param paras: ['待检索关键词',..]
     :param max_count: 每个结果最多寻找多少条匹配位置
@@ -146,6 +146,7 @@ def ag(paras, max_count=100, arg='ts', path_L=('.',), depth=100, lr_charNum=15, 
     :param show_count: 每个结果显示多少条匹配位置
     :param show_results: 显示多少条结果
     :param f_types: 文件类型参数, 比如 '--python --java'
+    :param f_ignore: 忽略匹配文件(全路径), 比如 "'**.txt','**.json'"
     :return:
     """
     paras_ = ['(?=.*%s)' % i for i in paras]
@@ -153,8 +154,8 @@ def ag(paras, max_count=100, arg='ts', path_L=('.',), depth=100, lr_charNum=15, 
     stat = []  # 每个路径一个统计
     for path in path_L:
         path = os.path.expanduser(path)
-        command = "./ag %s -i%sm%d --column --silent --nocolor --stats --ackmate --depth %d '%s' '%s'" % \
-                  (f_types, arg, max_count, depth, '^' + ''.join(paras_) + '.*', path)
+        command = "./ag %s -i%sm%d --column --silent --nocolor --stats --ackmate --ignore={%s,} --depth %d '%s' '%s'" % \
+                  (f_types, arg, max_count, f_ignore, depth, '^' + ''.join(paras_) + '.*', path)
         output = os.popen(command).readlines()
         assert 'can be found at' not in output[-1], 'ag 参数错误!'
         for line in output:
@@ -212,31 +213,41 @@ def main(wf):
     paras_pos = 2
     arg = ''
     f_types = ''  # 比如 '--python --cc'
+    f_ignore = ''  # 比如 '**.txt','**.json'
     if sys.argv[2][0] == '-':  # 输入fd命令的参数
-        flags = {'s', 't', '-'}
+        flags = {'s', 't', '-', '.'}
         arg = sys.argv[2][1:]
         t = len(set(arg) - flags) == 0
         # 约束输入参数的正确性
         search = True
-        if '-' in arg and len(sys.argv) > 3 and len(sys.argv) <= 4:
-            search = False
-            if re.search('[^a-z,]|,$|^,', sys.argv[3]):
+        if re.search(r'[\-.]', arg) and len(sys.argv) > 3:
+            if len(sys.argv) <= 4:
+                search = False
+            if '-' in arg and re.search('[^a-z,]|,$|^,', sys.argv[3]):
                 t = False
         if t and len(sys.argv) > 3 and search:
-            if '-' in arg:  # 指定文件类型
-                arg = arg.replace('-', '')
-                f_types = '--' + sys.argv[3].replace(',', ' --')
+            if re.search(r'[\-.]', arg):  # 指定文件类型, 或排除
+                if '-' in arg:
+                    f_types = '--' + sys.argv[3].replace(',', ' --')
+                else:
+                    f_ignore = "'**" + sys.argv[3].replace(':', "','**") + "'"
+                arg = re.sub(r'[\-.]', '', arg)
                 paras_pos = 4
             else:
                 paras_pos = 3
         else:
             title = '参数 例如:-st,-s,-,...'
-            subtitle = 's:大小写敏感, t:所有文本, -:指定文件类型(⌘查看介绍)'
+            subtitle = 's:大小写敏感, t:所有文本, -:指定文件类型(⌘查看介绍), .:排除文件后缀'
             wf.add_item(
                 title=(title if t else (title + '  输入参数错误!')),
                 subtitle=subtitle,
                 largetext=file_types,
             ).add_modifier(key='cmd', subtitle='指定文件类型(⌘+L查看支持文件类型), 比如 --st py,cc,java 关键词')
+            wf.add_item(
+                title="使用指定文件类型参数'-' 则不会再考虑'.'",
+                subtitle='排除文件(冒号分割): 比如 -. py*:c:.txt 关键词',
+                largetext=file_types,
+            )
             wf.send_feedback()
             return
 
@@ -249,7 +260,7 @@ def main(wf):
     paras = sys.argv[paras_pos:]
     fPath_L = [os.path.expanduser(i) for i in sys.argv[1].split(':')]
     ret, stat = ag(paras, max_count=max_count, arg=arg, path_L=fPath_L, depth=depth, lr_charNum=lr_charNum,
-                   show_count=show_count, show_results=show_results, f_types=f_types)
+                   show_count=show_count, show_results=show_results, f_types=f_types, f_ignore=f_ignore)
 
     for i, (allPath, n_text_L, fPath) in enumerate(ret):
         sPath = allPath.replace(fPath, '').strip(os.sep)

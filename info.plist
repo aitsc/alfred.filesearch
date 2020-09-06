@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.tsc.py.filesearch</string>
 	<key>category</key>
 	<string>Tools</string>
 	<key>connections</key>
@@ -338,16 +338,16 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>双击 Script Filter, 可以在其中看到检索路径参数修改的提示, 修改路径保存后用于自己的路径进行检索. 还可以复制 Script Filter 及后面操作, 然后修改触发关键词和检索路径.
+	<string>双击 Script Filter, 可以在其中看到检索路径参数修改的提示, 修改路径保存后用于自己的路径进行检索. 还可以复制 Script Filter 及后面操作, 然后修改触发关键词和检索路径. ~表示用户文件夹.
 
 三种模式: 
-1. 慢加载快检索 + 拼音检索 文件名.
-2. 较快检索 文件(夹)名. 
-3. 检索文件夹下所有文件内容, 多关键词并集检索.
+1. 慢加载快检索 + 拼音检索 + 缓存 文件名.
+2. 较快检索 文件(夹)名, 可以全路径或包不包含文件夹搜索. 
+3. 检索文件夹下所有文件内容, 多关键词并集检索, 可黑白名单过滤文件.
 
-⌘+⏎ : 在文件夹中显示
-⌘+L : 显示备注文本
-⏎ : 打开文件
+⌘+⏎ : 在文件夹中显示; 
+⌘+L : 显示备注文本; 
+⏎ : 打开文件; 
 shift/⌘+Y : 预览文件</string>
 	<key>uidata</key>
 	<dict>
@@ -418,8 +418,8 @@ shift/⌘+Y : 预览文件</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>webaddress</key>
-	<string></string>
+	<string>https://github.com/aitsc/alfred.filesearch</string>
 </dict>
 </plist>
