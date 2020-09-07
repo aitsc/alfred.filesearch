@@ -73,7 +73,7 @@ def main(wf):
 
         zh_match_L = []
         for targetPath in targetPath_L:
-            command = "./fd -a --regex '%s' '%s'" % (paras, targetPath)
+            command = "./fd -ai --regex '%s' '%s'" % (paras, targetPath)
             for i, line in enumerate(os.popen(command).readlines()):
                 allPath = line.strip('\r\n')
                 fPath, f = os.path.split(allPath)

@@ -139,7 +139,7 @@
 
 # 本脚本标识符 一般每个 Script Filter 唯一, 如果想再加一个立即刷新缓存的可以不唯一. 这确定了缓存文件名
 
-# 初始化速度比fd慢10几倍, 但是检索的时候快, 还可以使用拼音检索, 还可以缓存</string>
+# 初始化速度比fd慢10几倍, 但是检索的时候快, 还可以使用拼音检索, 还可以缓存. 不区分大小写</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -216,7 +216,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python 'fd.py' '~/Nutstore Files:~/Downloads:~/code' {query}
+				<string>python 'fd.py' '~/Nutstore Files:~/Downloads:~/code:~/git:~/data:~/Desktop' {query}
 
 # 修改倒数第二个参数的例子 '检索路径1:检索路径2'
 

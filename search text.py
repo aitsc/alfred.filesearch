@@ -214,7 +214,7 @@ def main(wf):
     arg = ''
     f_types = ''  # 比如 '--python --cc'
     f_ignore = ''  # 比如 '**.txt','**.json'
-    if sys.argv[2][0] == '-':  # 输入fd命令的参数
+    if sys.argv[2][0] == '-':  # 输入ag命令的参数
         flags = {'s', 't', '-', '.'}
         arg = sys.argv[2][1:]
         t = len(set(arg) - flags) == 0

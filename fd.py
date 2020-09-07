@@ -80,7 +80,7 @@ def main(wf):
     show_results = 200  # 显示多少条结果
     fPath_L = [os.path.expanduser(i) for i in sys.argv[1].split(':')]
     for fPath in fPath_L:  # 带检索目录
-        command = "./fd -a%s --regex --max-results %d '%s' --search-path '%s'" % (arg, max_results, paras, fPath)
+        command = "./fd -ai%s --regex --max-results %d '%s' --search-path '%s'" % (arg, max_results, paras, fPath)
         for i, line in enumerate(os.popen(command).readlines()):
             allPath = line.strip('\r\n')
             sPath = allPath.replace(fPath, '').strip(os.sep)
