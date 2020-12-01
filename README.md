@@ -37,8 +37,7 @@ shift/⌘+Y : 预览文件
 
 
 ## 安装
-1. 百度网盘下载 alfredworkflow 文件: 
-链接: https://pan.baidu.com/s/1y-p446r0lhwu9-4zHyOigQ 提取码: xdrd
-2. 双击 filesearch.alfredworkflow
+1. 下载 alfredworkflow 文件: https://github.com/aitsc/alfred.filesearch/releases
+2. 双击 File.Search.alfredworkflow
 3. 进入alfred workflow设置, 双击对应 Script Filter 模块, 可以在其中看到检索路径等参数修改的提示, 修改路径保存后用于自己的路径进行检索. 还可以复制 Script Filter 及后面操作, 然后修改触发关键词和检索路径. ~表示用户文件夹.
 
