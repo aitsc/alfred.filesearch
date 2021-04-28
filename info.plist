@@ -216,7 +216,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python2 'fd.py' '~/Nutstore Files:~/Downloads:~/code:~/git:~/data:~/Desktop:~/Documents/ScanSnap Home folder' {query}
+				<string>python2 'fd.py' '~/Nutstore Files:~/Downloads:~/code:~/git:~/data:~/Desktop:~/Documents:~/Library/Mobile Documents' {query}
 
 # 修改倒数第二个参数的例子 '检索路径1:检索路径2'
 
@@ -297,12 +297,12 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python2 'search text.py' '~/Nutstore Files:~/code' {query}
+				<string>python2 'search text.py' '~/Nutstore Files:~/code:~/git' {query}
 
 
 # 修改倒数第二个参数的例子 '检索路径1:检索路径2'
 
-# 检索文件中哪一行包含多个关键词</string>
+# 用于检索文件中哪一行包含这多个关键词</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>

@@ -41,3 +41,16 @@ shift/⌘+Y : 预览文件
 2. 双击 File.Search.alfredworkflow
 3. 进入alfred workflow设置, 双击对应 Script Filter 模块, 可以在其中看到检索路径等参数修改的提示, 修改路径保存后用于自己的路径进行检索. 还可以复制 Script Filter 及后面操作, 然后修改触发关键词和检索路径. ~表示用户文件夹.
 
+## 可能遇到的情况
+
+1. 可能需要需要授予执行权限: 右键 Workflows 中的 File Search, 然后在文件中打开(Open in Finder)并复制这个目录, 接着进入终端执行:
+
+```shell
+cd "上面复制的目录"
+chmod 777 ag
+chmod 777 fd
+chmod 777 hanz2piny
+```
+
+2. M1 芯片用户可能缺少文件, 可以在终端执行`sudo mkdir -p /usr/local/opt/pcre/lib`, 然后将上面复制的目录中的文件 libpcre.1.dylib 拷贝到 `/usr/local/opt/pcre/lib` 目录下.
+
