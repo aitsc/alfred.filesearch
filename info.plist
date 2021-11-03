@@ -216,7 +216,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python2 'fd.py' '~/Nutstore Files:~/Downloads:~/code:~/git:~/data:~/Desktop:~/Documents:~/Library/Mobile Documents' {query}
+				<string>python2 'fd.py' '~/Nutstore Files:~/Downloads:~/code:~/git:~/data:~/Desktop:~/Documents:~/Library/Mobile Documents:/Volumes/Extended-HD' {query}
 
 # 修改倒数第二个参数的例子 '检索路径1:检索路径2'
 
@@ -415,10 +415,8 @@ shift/⌘+Y : 预览文件</string>
 			<integer>50</integer>
 		</dict>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/aitsc/alfred.filesearch</string>
 </dict>

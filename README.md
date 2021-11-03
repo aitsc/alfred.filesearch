@@ -39,7 +39,7 @@ shift/⌘+Y : 预览文件
 ## 安装
 1. 下载 alfredworkflow 文件: https://github.com/aitsc/alfred.filesearch/releases
 2. 双击 File.Search.alfredworkflow
-3. 进入alfred workflow设置, 双击对应 Script Filter 模块, 可以在其中看到检索路径等参数修改的提示, 修改路径保存后用于自己的路径进行检索. 还可以复制 Script Filter 及后面操作, 然后修改触发关键词和检索路径. ~表示用户文件夹.
+3. 进入alfred workflow设置, 双击对应 Script Filter 模块, 可以在其中看到检索路径等参数修改的提示, 修改路径保存后用于自己的路径进行检索. 还可以复制 Script Filter 及后面操作, 然后修改触发关键词和检索路径. ~表示用户文件夹. 文件夹越多, 文件夹中的文件越多速度越慢.
 
 ## 可能遇到的情况
 
@@ -47,10 +47,9 @@ shift/⌘+Y : 预览文件
 
 ```shell
 cd "上面复制的目录"
-chmod 777 ag
-chmod 777 fd
-chmod 777 hanz2piny
+chmod 555 ag fd hanz2piny
 ```
 
-2. M1 芯片用户可能缺少文件, 可以在终端执行`sudo mkdir -p /usr/local/opt/pcre/lib`, 然后将上面复制的目录中的文件 libpcre.1.dylib 拷贝到 `/usr/local/opt/pcre/lib` 目录下.
+2. M1 芯片用户可能缺少文件, 可以在终端执行`sudo mkdir -p /usr/local/opt/pcre/lib`, 然后将上面复制的目录中的文件 m1/libpcre.1.dylib 拷贝到 `/usr/local/opt/pcre/lib` 目录下.
 
+3. Intel 芯片用户也可能缺少文件导致全文检索用不了, 将第2步中的 m1/libpcre.1.dylib 替换为 intel/libpcre.1.dylib
