@@ -53,3 +53,5 @@ chmod 555 ag fd hanz2piny
 2. M1 芯片用户可能缺少文件, 可以在终端执行`sudo mkdir -p /usr/local/opt/pcre/lib`, 然后将上面复制的目录中的文件 m1/libpcre.1.dylib 拷贝到 `/usr/local/opt/pcre/lib` 目录下.
 
 3. Intel 芯片用户也可能缺少文件导致全文检索用不了, 将第2步中的 m1/libpcre.1.dylib 替换为 intel/libpcre.1.dylib
+
+![error-intel](images/error-intel.jpg)
