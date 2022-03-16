@@ -22,7 +22,8 @@ up your Python script to best utilise the :class:`Workflow` object.
 from __future__ import print_function, unicode_literals
 
 import binascii
-import cPickle
+# import cPickle
+import pickle as cPickle
 from copy import deepcopy
 import json
 import logging
@@ -44,12 +45,14 @@ except ImportError:  # pragma: no cover
     import xml.etree.ElementTree as ET
 
 # imported to maintain API
-from util import AcquisitionError  # noqa: F401
-from util import (
+from .util import AcquisitionError  # noqa: F401
+from .util import (
     atomic_writer,
     LockFile,
     uninterruptible,
 )
+unicode = str
+basestring = str
 
 #: Sentinel for properties that haven't been set yet (that might
 #: correctly have the value ``None``)
@@ -619,7 +622,7 @@ class JSONSerializer(object):
         :type file_obj: ``file`` object
 
         """
-        return json.dump(obj, file_obj, indent=2, encoding='utf-8')
+        return json.dump(obj, file_obj, indent=2)
 
 
 class CPickleSerializer(object):
@@ -859,8 +862,7 @@ class Settings(dict):
 
         with LockFile(self._filepath, 0.5):
             with atomic_writer(self._filepath, 'wb') as fp:
-                json.dump(data, fp, sort_keys=True, indent=2,
-                          encoding='utf-8')
+                json.dump(data, fp, sort_keys=True, indent=2)
 
     # dict methods
     def __setitem__(self, key, value):
@@ -996,7 +998,7 @@ class Workflow(object):
     @property
     def alfred_version(self):
         """Alfred version as :class:`~workflow.update.Version` object."""
-        from update import Version
+        from .update import Version
         return Version(self.alfred_env.get('version'))
 
     @property
@@ -1171,7 +1173,7 @@ class Workflow(object):
                 version = self.info.get('version')
 
             if version:
-                from update import Version
+                from .update import Version
                 version = Version(version)
 
             self._version = version
@@ -2217,7 +2219,7 @@ class Workflow(object):
 
             version = self.settings.get('__workflow_last_version')
             if version:
-                from update import Version
+                from .update import Version
                 version = Version(version)
 
             self._last_version_run = version
@@ -2246,7 +2248,7 @@ class Workflow(object):
             version = self.version
 
         if isinstance(version, basestring):
-            from update import Version
+            from .update import Version
             version = Version(version)
 
         self.settings['__workflow_last_version'] = str(version)
@@ -2698,7 +2700,7 @@ class Workflow(object):
         encoding = encoding or self._input_encoding
         normalization = normalization or self._normalizsation
         if not isinstance(text, unicode):
-            text = unicode(text, encoding)
+            text = unicode(text)
         return unicodedata.normalize(normalization, text)
 
     def fold_to_ascii(self, text):

@@ -21,8 +21,8 @@ import socket
 import string
 import unicodedata
 import urllib
-import urllib2
-import urlparse
+import urllib.request as urllib2
+from urllib.parse import urlparse
 import zlib
 
 __version__ = open(os.path.join(os.path.dirname(__file__), 'version')).read()

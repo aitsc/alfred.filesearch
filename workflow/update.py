@@ -32,7 +32,7 @@ import re
 import subprocess
 
 import workflow
-import web
+from . import web
 
 # __all__ = []
 

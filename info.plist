@@ -133,7 +133,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python2 'search file.py' '0:7tTzXHqr' '~/Nutstore Files/学习/论文/EndNote/papers.Data/PDF' 'pdf' ''
+				<string>python3 'search file.py' '0:7tTzXHqr' '~/Downloads/2007' 'pdf' ''
 
 # 参数的例子 '缓存保留秒数:本脚本标识符' '检索路径1:检索路径2' '检索后缀名1:检索后缀名2' '排除文件夹1:排除文件夹2'
 
@@ -216,7 +216,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python2 'fd.py' '~/Nutstore Files:~/Downloads:/Volumes/Extended-HD' {query}
+				<string>python3 'fd.py' '~/Nutstore Files:~/Downloads:~/Desktop:~/Documents:~/Library/Mobile Documents/iCloud~QReader~MarginStudy/Documents:~/不同步' {query}
 
 # 修改倒数第二个参数的例子 '检索路径1:检索路径2'
 
@@ -297,7 +297,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python2 'search text.py' '~/code:~/git' {query}
+				<string>python3 'search text.py' '~/code:~/git' {query}
 
 
 # 修改倒数第二个参数的例子 '检索路径1:检索路径2'
@@ -415,10 +415,8 @@ shift/⌘+Y : 预览文件</string>
 			<integer>50</integer>
 		</dict>
 	</dict>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
-	<string>1.2</string>
+	<string>1.3</string>
 	<key>webaddress</key>
 	<string>https://github.com/aitsc/alfred.filesearch</string>
 </dict>
