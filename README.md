@@ -55,3 +55,8 @@ chmod 555 ag fd hanz2piny
 3. Intel 芯片用户也可能缺少文件导致全文检索用不了, 将第2步中的 m1/libpcre.1.dylib 替换为 intel/libpcre.1.dylib
 
 ![error-intel](images/error-intel.jpg)
+
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/aitsc/alfred.filesearch.svg)](https://starchart.cc/aitsc/alfred.filesearch)
