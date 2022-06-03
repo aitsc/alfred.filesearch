@@ -56,29 +56,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>E484B573-278C-4953-AE55-8405C7B5D8CD</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>260BCCF6-2C5E-4B60-8BBD-7400C4A37058</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>6B3DEA2D-96B0-4370-B2DF-CF0DB9D30F54</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>在文件夹中显示</string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 	</dict>
 	<key>createdby</key>
 	<string>tsc</string>
@@ -90,89 +67,6 @@
 	<string>File Search</string>
 	<key>objects</key>
 	<array>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>openwith</key>
-				<string></string>
-				<key>sourcefile</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openfile</string>
-			<key>uid</key>
-			<string>260BCCF6-2C5E-4B60-8BBD-7400C4A37058</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>alfredfiltersresults</key>
-				<true/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>2</integer>
-				<key>argumenttreatemptyqueryasnil</key>
-				<false/>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>en</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>2</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>等待搜索中…</string>
-				<key>script</key>
-				<string>python2 'search file.py' '0:7tTzXHqr' '~/Nutstore Files/学习/论文/EndNote/papers.Data/PDF' 'pdf' ''
-
-# 参数的例子 '缓存保留秒数:本脚本标识符' '检索路径1:检索路径2' '检索后缀名1:检索后缀名2' '排除文件夹1:排除文件夹2'
-
-# 本脚本标识符 一般每个 Script Filter 唯一, 如果想再加一个立即刷新缓存的可以不唯一. 这确定了缓存文件名
-
-# 初始化速度比fd慢10几倍, 但是检索的时候快, 还可以使用拼音检索, 还可以缓存. 不区分大小写</string>
-				<key>scriptargtype</key>
-				<integer>0</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>subtext</key>
-				<string>⏎ 进入文件, ⌘+⏎ 进入文件夹, ⌘+C 复制文件路径.</string>
-				<key>title</key>
-				<string>搜索endnote论文</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>E484B573-278C-4953-AE55-8405C7B5D8CD</string>
-			<key>version</key>
-			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>path</key>
-				<string></string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.revealfile</string>
-			<key>uid</key>
-			<string>6B3DEA2D-96B0-4370-B2DF-CF0DB9D30F54</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -216,7 +110,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python2 'fd.py' '~/Nutstore Files:~/Downloads:/Volumes/Extended-HD' {query}
+				<string>~/opt/anaconda3/envs/py27/bin/python 'fd.py' '~/Nutstore Files:~/Downloads' {query}
 
 # 修改倒数第二个参数的例子 '检索路径1:检索路径2'
 
@@ -297,7 +191,7 @@
 				<key>runningsubtext</key>
 				<string>等待搜索中…</string>
 				<key>script</key>
-				<string>python2 'search text.py' '~/code:~/git' {query}
+				<string>~/opt/anaconda3/envs/py27/bin/python 'search text.py' '~/git' {query}
 
 
 # 修改倒数第二个参数的例子 '检索路径1:检索路径2'
@@ -354,65 +248,44 @@ shift/⌘+Y : 预览文件</string>
 		<key>034B5527-FE82-4BAE-8E90-00C1B0A2D6D2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>535</integer>
+			<integer>650</integer>
 			<key>ypos</key>
-			<integer>715</integer>
-		</dict>
-		<key>260BCCF6-2C5E-4B60-8BBD-7400C4A37058</key>
-		<dict>
-			<key>xpos</key>
-			<integer>520</integer>
-			<key>ypos</key>
-			<integer>10</integer>
-		</dict>
-		<key>6B3DEA2D-96B0-4370-B2DF-CF0DB9D30F54</key>
-		<dict>
-			<key>xpos</key>
-			<integer>525</integer>
-			<key>ypos</key>
-			<integer>140</integer>
+			<integer>515</integer>
 		</dict>
 		<key>6D1C781B-2269-4A33-86AC-B937E58C26DD</key>
 		<dict>
 			<key>xpos</key>
-			<integer>530</integer>
+			<integer>645</integer>
 			<key>ypos</key>
-			<integer>315</integer>
+			<integer>115</integer>
 		</dict>
 		<key>75C88C85-11C0-48EF-AF13-1CB7CCDF04C2</key>
 		<dict>
 			<key>xpos</key>
-			<integer>535</integer>
+			<integer>650</integer>
 			<key>ypos</key>
-			<integer>445</integer>
+			<integer>245</integer>
 		</dict>
 		<key>9CD32B32-786F-4AD2-87CF-33AA3C5714A5</key>
 		<dict>
 			<key>xpos</key>
-			<integer>520</integer>
+			<integer>635</integer>
 			<key>ypos</key>
-			<integer>570</integer>
+			<integer>370</integer>
 		</dict>
 		<key>BA72E854-087D-41FA-AB65-08A6B953B33C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>205</integer>
+			<integer>320</integer>
 			<key>ypos</key>
-			<integer>355</integer>
+			<integer>155</integer>
 		</dict>
 		<key>C77499B0-5340-4835-84A4-7C20F2EB001C</key>
 		<dict>
 			<key>xpos</key>
-			<integer>225</integer>
+			<integer>340</integer>
 			<key>ypos</key>
-			<integer>630</integer>
-		</dict>
-		<key>E484B573-278C-4953-AE55-8405C7B5D8CD</key>
-		<dict>
-			<key>xpos</key>
-			<integer>195</integer>
-			<key>ypos</key>
-			<integer>50</integer>
+			<integer>430</integer>
 		</dict>
 	</dict>
 	<key>variablesdontexport</key>

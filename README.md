@@ -55,3 +55,5 @@ chmod 555 ag fd hanz2piny
 3. Intel 芯片用户也可能缺少文件导致全文检索用不了, 将第2步中的 m1/libpcre.1.dylib 替换为 intel/libpcre.1.dylib
 
 ![error-intel](images/error-intel.jpg)
+
+4. Mac M1 conda安装python2.7版本: https://blog.csdn.net/sjwbcb/article/details/122880763
